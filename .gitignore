@@ -1,0 +1,6 @@
+*.jpg
+*.gcode
+*.svg
+*/config
+vsketch_venv/
+__pycache__/
