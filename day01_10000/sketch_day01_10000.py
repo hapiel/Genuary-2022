@@ -117,8 +117,9 @@ class Day0110000Sketch(vsketch.SketchClass):
             blade.draw(vsk)
 
         print(total_lines)
+
         #single
-        blade = Grass(vsk, params, 1, height - self.margin , 1)
+        # blade = Grass(vsk, params, 1, height - self.margin , 1)
         # blade.draw_curve(vsk)
         # blade.draw(vsk)
 
