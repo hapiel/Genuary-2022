@@ -7,6 +7,7 @@ import utils
 from skimage import io
 import math
 import random
+import csv
 
 
 img = io.imread("Henri-edmond-cross-a-pine-tree-bw.jpg")
@@ -24,7 +25,8 @@ class Day02DitheringSketch(vsketch.SketchClass):
         vsk.scale("mm")
 
         points = []
-
+        points_abs = []
+        
         for y, row in enumerate(img[::self.detail]):
             for x, color in enumerate(row[::self.detail]):
                 if color[0] < 160:
@@ -33,7 +35,13 @@ class Day02DitheringSketch(vsketch.SketchClass):
                         yc = vsk.map(y,  0, len(row) / self.detail, 0, utils.css_to_mm(vsk.width) - 10) 
                         # vsk.circle(xc, yc, 0.2)
                         points.append((xc, yc))
-
+                        points_abs.append((x, y))
+                        
+        with open('tree.csv', mode='w') as file:
+            write = csv.writer(file, lineterminator = '\n')
+            write.writerows(points_abs)
+        
+        print(len(points))
         point1 = random.choice(points)
 
         while len(points) > 1:
@@ -61,6 +69,8 @@ class Day02DitheringSketch(vsketch.SketchClass):
 
             vsk.line(point1[0], point1[1], point2[0], point2[1])
             point1 = point2
+        
+        
 
 
 
