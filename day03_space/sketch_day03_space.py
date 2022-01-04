@@ -1,11 +1,9 @@
 import sys, os
-from numpy import half
-from shapely.geometry import geo
-from shapely.geometry.multilinestring import MultiLineString
-sys.path.append(os.path.abspath("D:\9mediatech\python\genuary"))
+# location of utils file:
+sys.path.append(os.path.join(os.path.abspath(__file__), "../../"))
+import utils 
 
 import vsketch
-import utils 
 import math
 from shapely import geometry, affinity
 
@@ -37,7 +35,7 @@ class Day03SpaceSketch(vsketch.SketchClass):
 
         widthmm = utils.css_to_mm(vsk.width)
         heightmm = utils.css_to_mm(vsk.height)
-
+        
 
         attractor = (self.dia/2 + 20, self.dia*1.2)
         repulsor = (self.dia/2 + 20, self.dia*0.4)

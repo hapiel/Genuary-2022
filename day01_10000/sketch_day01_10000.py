@@ -1,5 +1,6 @@
 import sys, os
-sys.path.append(os.path.abspath("D:\9mediatech\python\genuary"))
+# location of utils file:
+sys.path.append(os.path.join(os.path.abspath(__file__), "../../"))
 
 import vsketch
 import utils 

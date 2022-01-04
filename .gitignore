@@ -2,6 +2,7 @@
 *.gcode
 *.svg
 *.csv
+*.mp4
 */config
 venv/
 __pycache__/
