@@ -34,7 +34,7 @@ class Day02DitheringSketch(vsketch.SketchClass):
                     if vsk.random(color[0]) < 8:
                         xc = vsk.map(x, 0, len(row) / self.detail, 0, utils.css_to_mm(vsk.width) - 10)
                         yc = vsk.map(y,  0, len(row) / self.detail, 0, utils.css_to_mm(vsk.width) - 10) 
-                        # vsk.circle(xc, yc, 0.2)
+                        vsk.circle(xc, yc, 0.2)
                         points.append((xc, yc))
                         points_abs.append((x, y))
                         
@@ -45,31 +45,31 @@ class Day02DitheringSketch(vsketch.SketchClass):
         print(len(points))
         point1 = random.choice(points)
 
-        while len(points) > 1:
-            points.remove(point1)
-            point2 = random.choice(points)
-            for _ in range(2000):
-                if math.dist(point1,point2) < self.len1:
-                    break
-                point2 = random.choice(points)
-            else: 
-                for _ in range(2000):
-                    if math.dist(point1,point2) < self.len2:
-                        break
-                    point2 = random.choice(points)
-                else: 
-                    for _ in range(2000):
-                        if math.dist(point1,point2) < self.len3:
-                            break
-                        point2 = random.choice(points)
-                    else: 
-                        points.remove(point2)
-                        points.append(point1)
-                        continue
+        # while len(points) > 1:
+        #     points.remove(point1)
+        #     point2 = random.choice(points)
+        #     for _ in range(2000):
+        #         if math.dist(point1,point2) < self.len1:
+        #             break
+        #         point2 = random.choice(points)
+        #     else: 
+        #         for _ in range(2000):
+        #             if math.dist(point1,point2) < self.len2:
+        #                 break
+        #             point2 = random.choice(points)
+        #         else: 
+        #             for _ in range(2000):
+        #                 if math.dist(point1,point2) < self.len3:
+        #                     break
+        #                 point2 = random.choice(points)
+        #             else: 
+        #                 points.remove(point2)
+        #                 points.append(point1)
+        #                 continue
 
 
-            vsk.line(point1[0], point1[1], point2[0], point2[1])
-            point1 = point2
+            # vsk.line(point1[0], point1[1], point2[0], point2[1])
+            # point1 = point2
         
         
 
