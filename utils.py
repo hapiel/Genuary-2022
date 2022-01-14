@@ -1,8 +1,7 @@
 import vsketch
 import numpy as np
-from svgpath2mpl import parse_path
-from shapely import geometry
-import xml.etree.ElementTree as etree
+
+
 
 
 def css_to_cm(css):

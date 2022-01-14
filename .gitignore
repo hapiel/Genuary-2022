@@ -3,6 +3,7 @@
 *.svg
 *.csv
 *.mp4
+*.ndjson
 */config
 venv/
 __pycache__/
