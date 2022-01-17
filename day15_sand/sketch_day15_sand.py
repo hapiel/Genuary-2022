@@ -65,8 +65,6 @@ class Day15SandSketch(vsketch.SketchClass):
                 
 
 
-
-
     def finalize(self, vsk: vsketch.Vsketch) -> None:
         filename = os.path.basename(__file__)[7:-3]
         vsk.vpype(f"rotate 180 linemerge linesimplify reloop linesort gwrite {filename}.gcode")
